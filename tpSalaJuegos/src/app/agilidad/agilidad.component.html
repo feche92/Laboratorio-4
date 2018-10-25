@@ -1,0 +1,24 @@
+<div class="login-page">
+<h1 style="text-align: center;">Agilidad aritmetica!</h1>
+<div class="login-container">
+<form name="juego">
+  <div *ngIf="ocultar==true">
+    <div *ngIf="miJuego.JuegoEmpezado()">
+      <h1>Resuelve: {{miJuego.numero1}} {{miJuego.operador}} {{miJuego.numero2}}</h1>
+      <label>Respuesta:  </label>  <input [(ngModel)]="respuesta" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+    </div>
+      <h2><button mat-raised-button color="warn" *ngIf="miJuego.JuegoEmpezado()" (click)="verificar()" class="btn-lg">Verificar {{Tiempo}}</button></h2>
+      <div *ngIf="!miJuego.JuegoEmpezado()" >
+      <h2><button mat-raised-button color="warn"  (click)="nuevoJuego()"  class="btn-lg">Empezar Juego</button></h2>
+      </div>
+    </div>
+    <div *ngIf="ocultar==false">
+      <h3>{{mensaje}}</h3>
+      <div class="register">
+          <button mat-raised-button (click)="nuevoJuego()" color="primary">Jugar otra partida</button>
+          <button mat-raised-button color="warn" routerLink='/menu/estadisticas'>Salir</button>
+      </div>
+    </div>
+</form>
+</div>
+</div>

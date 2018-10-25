@@ -1,0 +1,30 @@
+.memory-board{
+    height: 540px;
+    width: 800px;
+    background-color: #CCC;
+    padding: 24px;
+    margin: 0px auto;
+    border: #999 1px solid;
+}
+
+.login-container{
+    margin: auto;
+    width: 700px;
+    padding: 10vh;
+    background-color: rgb(9, 216, 243);
+}
+
+.buttons .register{
+    display: flex;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    justify-content: space-between;
+}
+
+.login-page{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/memoria.jpg');
+    background-size: cover;
+    background-position: center;
+}

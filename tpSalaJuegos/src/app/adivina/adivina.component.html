@@ -1,0 +1,28 @@
+<div class="login-page">
+
+
+<div class="login-container">
+<form name="juego">
+  <div *ngIf="ocultar==true">
+    <div *ngIf="miJuego.JuegoEmpezado()">
+      <h2>Adivina el numero secreto entre 0 y 100</h2>
+      <label>Respuesta:  </label>  <input [(ngModel)]="miJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+      <h3><button mat-raised-button color="warn" *ngIf="miJuego.JuegoEmpezado()" (click)="verificar()" class="btn-lg">Verificar</button></h3>
+      <h4>Intentos: {{intentos}}</h4>
+      <h4>{{ayuda}}</h4>
+    </div>
+      <div *ngIf="!miJuego.JuegoEmpezado()" >
+          <h1 style="text-align: center;">Adivina el numero</h1>
+      <h2><button mat-raised-button color="warn"  (click)="nuevoJuego()"  class="btn-lg">Empezar Juego</button></h2>
+      </div>
+    </div>
+    <div *ngIf="ocultar==false">
+      <h3>{{mensaje}}</h3>
+      <div class="register">
+          <button mat-raised-button (click)="nuevoJuego()" color="primary">Jugar otra partida</button>
+          <button mat-raised-button color="warn" routerLink='/menu/estadisticas'>Salir</button>
+      </div>
+    </div>
+</form>
+</div>
+</div>

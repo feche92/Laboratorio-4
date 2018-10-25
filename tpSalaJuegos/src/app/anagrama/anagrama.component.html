@@ -1,0 +1,33 @@
+<div class="login-page">
+<h1 style="text-align: center;">Anagrama!</h1>
+<div class="login-container">
+<form name="juego">
+  <div *ngIf="ocultar==true">
+    <div *ngIf="miJuego.JuegoEmpezado()">
+      <h1 style="text-align: center;">{{miJuego.palabraMezclada}}</h1>
+      <label>Respuesta:  </label>  <input [(ngModel)]="respuesta" placeholder="Ingrese la palabra correcta" name="palabraIngresada" type="text" class="form-control" style="width:50%"/>
+    </div>
+      <h2><button mat-raised-button color="warn" *ngIf="miJuego.JuegoEmpezado()" (click)="verificar()" class="btn-lg">Verificar</button></h2>
+      <div *ngIf="!miJuego.JuegoEmpezado()" >
+      <h2><button mat-raised-button color="warn"  (click)="nuevoJuego()"  class="btn-lg">Empezar Juego</button></h2>
+      <mat-radio-group [(ngModel)]="miJuego.nivel" name='nivel' class="md-primary">
+
+        <mat-radio-button value="normal">Normal</mat-radio-button>
+        <mat-radio-button value="dificil"> Dificil </mat-radio-button>
+  
+      </mat-radio-group>
+      </div>
+    </div>
+    <div *ngIf="ocultar==false">
+      <h3>{{mensaje}}</h3>
+      <div class="register">
+          <button mat-raised-button (click)="nuevoJuego()" color="primary">Jugar otra partida</button>
+          <button mat-raised-button color="warn" routerLink='/menu/estadisticas'>Salir</button>
+      </div>
+      <!--<h3 [hidden]="ocultar" *ngIf="miJuego.GetGano()">Felicidades Usted Gano!</h3>
+      <h3 [hidden]="ocultar" *ngIf="!miJuego.GetGano()">Usted Perdio! La Palabra era: {{miJuego.palabraSecreta}}</h3>-->
+    </div>
+</form>
+</div>
+
+</div>

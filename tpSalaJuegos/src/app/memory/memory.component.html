@@ -1,0 +1,52 @@
+<div class="login-page">
+<h1 style="text-align: center;">Juego de memoria!</h1>
+<div class="login-container">
+  <form name="juego">
+    <div *ngIf="ocultar==true">
+    <div *ngIf="!miJuego.JuegoEmpezado()" >
+      <h2><button mat-raised-button color="warn"  (click)="nuevoJuego()"  class="btn-lg">Empezar Juego</button></h2>
+    </div>
+  <div *ngIf="miJuego.JuegoEmpezado() && fotos==true">
+    <div class="row"><h2 style="text-align: center;">{{tiempo}}</h2></div>
+  <div class="row"><h2 style="text-align: center;">Recuerde las imagenes</h2></div>
+  <div class="row">
+    1<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[0]['path']}}" width="200px" height="100px" /></div></a>
+    2<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[1]['path']}}" width="200px" height="100px" /></div></a>
+  </div>
+  <div class="row">
+    3<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[2]['path']}}" width="200px" height="100px" /></div></a>
+    4<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[3]['path']}}" width="200px" height="100px" /></div></a>
+  </div>
+  <div class="row">
+    5<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[4]['path']}}" width="200px" height="100px" /></div></a>
+    6<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[5]['path']}}" width="200px" height="100px" /></div></a>
+  </div>
+  <div class="row">
+    7<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[6]['path']}}" width="200px" height="100px" /></div></a>
+    8<a href="#"><div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src=
+    "{{miJuego.animales[7]['path']}}" width="200px" height="100px" /></div></a>
+  </div>
+</div>
+<div *ngIf="miJuego.JuegoEmpezado() && fotos==false">
+    <h1>{{mensaje}}</h1>
+    <label>Respuesta:  </label>  <input [(ngModel)]="miJuego.respuesta" placeholder="ingrese respuesta" name="respuestaIngresada" type="text" class="form-control" style="width:50%"/>
+    <h2><button mat-raised-button color="warn" (click)="verificar()" class="btn-lg">Verificar</button></h2>
+</div>
+</div>
+<div *ngIf="ocultar==false">
+    <h3>{{mensaje}}</h3>
+    <div class="register">
+        <button mat-raised-button (click)="nuevoJuego()" color="primary">Jugar otra partida</button>
+        <button mat-raised-button color="warn" routerLink='/menu/estadisticas'>Salir</button>
+    </div>
+  </div>
+  </form>
+</div>
+</div>

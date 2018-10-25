@@ -1,0 +1,21 @@
+.buttons .register{
+    display: flex;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    justify-content: space-between;
+}
+
+.login-container{
+    margin: auto;
+    width: 500px;
+    padding: 4vh;
+    background-color: rgb(39, 163, 194);
+}
+
+.login-page{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/letras.jpg');
+    background-size: cover;
+    background-position: center;
+}

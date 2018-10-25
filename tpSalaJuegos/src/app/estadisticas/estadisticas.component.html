@@ -1,0 +1,170 @@
+<div class="login-page">
+<div class="container-fluid">
+  <div class="row" style="width:50%"><h4 style="padding-top:2em;">{{jugador}}</h4></div>
+  <div class="row">
+    <div class="col-sm-3 col-md-3"><h3>Juego de memoria</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6"><h5>victorias</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[2]['victorias']}}</div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6"><h5>perdidas</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[2]['derrotas']}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-3 col-md-3"><h3>Adivina el numero</h3>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>victorias</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[3]['victorias']}}</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>perdidas</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[3]['derrotas']}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3"><h3>Anagrama</h3>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>victorias</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[0]['victorias']}}</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>perdidas</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[0]['derrotas']}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3"><h3>Agilidad aritmetica</h3>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>victorias</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[1]['victorias']}}</div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6"><h5>perdidas</h5>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">{{datosJugador[1]['derrotas']}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="width:50%"><h4 style="padding-top:2em;">Jugadores con mas victorias</h4></div>
+  <div class="row">
+    <div class="col-sm-3 col-md-3"><h3>Juego de memoria</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-7"><h5>jugador</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='memoria'">{{item['nombre']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-5"><h5>victorias</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='memoria'">{{item['victorias']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3"><h3>Adivina el numero</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-7"><h5>Jugador</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='adivina'">{{item['nombre']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-5"><h5>Victorias</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='adivina'">{{item['victorias']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3"><h3>Anagrama</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-7"><h5>Jugador</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='anagrama'">{{item['nombre']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-5"><h5>Victorias</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='anagrama'">{{item['victorias']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3"><h3>Agilidad aritmetica</h3>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-7"><h5>Jugador</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='AgilidadAritmetica'">{{item['nombre']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-5"><h5>Victorias</h5>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <table>
+              <tr *ngFor="let item of datosJuegos;let i=index">
+                <td *ngIf="item['juego']=='AgilidadAritmetica'">{{item['victorias']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

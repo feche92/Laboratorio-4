@@ -1,0 +1,73 @@
+<div class="login-page">
+  <div class="login-spacer"></div>
+  <div class="login-container">
+    <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+      <i id="lock-icon" class="material-icons">lock</i>
+    </div>
+    <h2 class="card-heading">
+      User Register
+    </h2>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="registrar()" novalidate>
+      
+      <div class="form-group">
+          <mat-form-field >
+              <input matInput class="form-control" formControlName="email" placeholder="ingrese su email">
+          </mat-form-field>
+          <div *ngIf="loginForm.get('email').errors" class="alert alert-danger">
+              <div *ngIf="loginForm.get('email').errors['required']">
+                  Email requerido
+              </div>
+              <div *ngIf="loginForm.get('email').errors['email']">
+                  Email incorrecto
+              </div>
+          </div>              
+      </div>
+      <div class="form-group">
+        <mat-form-field >
+            <input matInput class="form-control" formControlName="nombre" placeholder="ingrese su nombre">
+        </mat-form-field>
+        <div *ngIf="loginForm.get('nombre').errors" class="alert alert-danger">
+            <div *ngIf="loginForm.get('nombre').errors['required']">
+                nombre requerido
+            </div>
+            <div *ngIf="loginForm.get('nombre').errors['email']">
+                nombre muy corto
+            </div>
+        </div>              
+      </div>
+      <div class="form-group">
+        <mat-form-field >
+            <input matInput class="form-control" formControlName="apellido" placeholder="ingrese su apellido">
+        </mat-form-field>
+        <div *ngIf="loginForm.get('apellido').errors" class="alert alert-danger">
+            <div *ngIf="loginForm.get('apellido').errors['required']">
+              apellido requerido
+            </div>
+            <div *ngIf="loginForm.get('apellido').errors['email']">
+              apellido muy corto
+            </div>
+        </div>              
+      </div>
+
+      <div class="form-group">
+          <mat-form-field >
+              <input matInput class="form-control" type='password' formControlName="password" placeholder="ingrese su clave">
+          </mat-form-field>
+          <div *ngIf="loginForm.get('password').errors" class="alert alert-danger">
+              <div *ngIf="loginForm.get('password').errors['required']">
+                  Clave requerida
+              </div>
+              <div *ngIf="loginForm.get('password').errors['minlength']">
+                  Clave insegura
+              </div>
+          </div>              
+      </div>
+    <div class="buttons">
+      <div class="register">
+        <button mat-raised-button type="submit" color="primary" [disabled]="!loginForm.valid">Registrar</button>
+        <button mat-raised-button color="warn" routerLink='/login'>Cancelar</button>
+      </div>     
+    </div>
+  </form>
+  </div>
+</div>
